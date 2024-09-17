@@ -8,6 +8,10 @@ import yaml
 import ssl
 import os
 import sys
+import logging
+
+# Create and configure logger
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..')) 
 from lib.data import simulate
@@ -62,8 +66,8 @@ def on_connect(client, userdata, flags, rc):
 
 def publish(client, msg):
     ret = client.publish("sensors", json.dumps(msg))
-    print("Published msg: ", msg)
-    print("Published return: ", ret)
+    logging.info("Published msg: %s", msg)
+    logging.info("Published return: %s", ret)
     return ret
     
 def mqtt_init():
@@ -82,5 +86,5 @@ def mqtt_init():
         client.connect(broker,port);    # establish connection
         return client
     except: 
-        client.close()
+        client.disconnect()
         print("All done! bye!")

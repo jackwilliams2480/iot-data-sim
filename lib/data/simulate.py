@@ -1,5 +1,6 @@
 import random
 import json
+from datetime import datetime, timezone
 
 def generate_temperature():
     """
@@ -110,7 +111,16 @@ def json_builder(include_temperature=False, include_humidity=False, include_deci
                     include_accelerometer=False, include_rotary_encoder=False, include_motion=False, include_ac_current=False,
                     include_light=False, include_dry_wet=False, include_voltage=False, include_water_level=False,
                     include_pulse_counter=False, include_gas=False, include_air_quality=False):
-    data = {}
+    
+    payload = {
+        "sensorID": 1,
+        "sensorName": "simulink",
+        "batteryVoltage": 3,
+        "time": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "data": {}
+    }
+    
+    data = payload['data']
     
     if include_temperature:
         data['temperature'] = generate_temperature()
@@ -143,4 +153,4 @@ def json_builder(include_temperature=False, include_humidity=False, include_deci
     if include_air_quality:
         data['air_quality'] = generate_air_quality()
     
-    return json.dumps(data)
+    return json.dumps(payload)

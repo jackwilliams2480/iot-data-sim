@@ -21,7 +21,7 @@ mqtt:
   auth:
     username: "rw"
     password: "readwrite"
-  topic: "your-mqtt-topic"
+  topic: "qsi_sensor"
   qos: 1
   retain: false
-  interval: 5
+  interval: 5 # in seconds
