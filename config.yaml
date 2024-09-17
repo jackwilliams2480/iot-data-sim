@@ -1,0 +1,27 @@
+# config.yaml
+
+aws:
+  iot_core:
+    endpoint: "your-aws-iot-endpoint"
+    region: "your-aws-region"
+    root_ca_path: "path-to-your-root-ca-file"
+    private_key_path: "path-to-your-private-key-file"
+    certificate_path: "path-to-your-certificate-file"
+    client_id: "your-aws-client-id"
+
+azure:
+  iot_hub:
+    endpoint: "your-azure-iot-hub-endpoint"
+    connection_string: "your-azure-connection-string"
+    device_id: "your-azure-device-id"
+
+mqtt:
+  broker: "test.mosquitto.org"
+  port: 8884
+  auth:
+    username: "rw"
+    password: "readwrite"
+  topic: "your-mqtt-topic"
+  qos: 1
+  retain: false
+  interval: 5
