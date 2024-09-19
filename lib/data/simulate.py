@@ -111,6 +111,9 @@ def json_builder(include_temperature=False, include_humidity=False, include_deci
                     include_accelerometer=False, include_rotary_encoder=False, include_motion=False, include_ac_current=False,
                     include_light=False, include_dry_wet=False, include_voltage=False, include_water_level=False,
                     include_pulse_counter=False, include_gas=False, include_air_quality=False):
+    """
+    Generates a JSON payload using flags to specifiy which sensor data should be populated.
+    """
     
     payload = {
         "sensorID": 1,
