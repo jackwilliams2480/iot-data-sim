@@ -28,6 +28,7 @@ if __name__ == "__main__":
         
         try:
             while(True):
+                print("Publishing data...")
                 ret = client.publish(simulate.json_builder(include_temperature=True, include_humidity=True))
                 time.sleep(5)
         except KeyboardInterrupt:
