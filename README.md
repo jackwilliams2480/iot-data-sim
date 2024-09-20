@@ -1,8 +1,9 @@
 # iot-data-sim
-Allow for easy connection to AWS IoT Core, Azure IoT Hub, or various other cloud capabilities to simulate and publish telemetry data 
+Simple tool to simulate common iot sensor readings and publish them to AWS IoT Core, Azure IoT Hub, or various other cloud capabilities.
 
 ## certs
 For proper functionality, create and populate a `certs` folder inside the directory of the relevant capability. For example:
+#### MQTT with Mosquitto broker
 ```python
 iot-data-sim/
 |-- lib/
@@ -13,6 +14,22 @@ iot-data-sim/
 |   |   |   |-- mosquitto.org.crt
 |   |   |   |-- client.crt
 |   |   |   |-- client.key
+| ...
+|-- main.py
+```
+
+#### AWS IoT Core as a Thing 
+```python
+iot-data-sim/
+|-- lib/
+|   |-- aws/
+|   |   |-- __init__.py
+|   |   |-- aws_connection.py
+|   |   |-- certs/
+|   |   |   |-- root-CA.crt
+|   |   |   |-- your.cert.pem
+|   |   |   |-- your.private.key
+|   |   |   |-- your.public.key
 | ...
 |-- main.py
 ```
