@@ -9,7 +9,6 @@ import time
 import json
 from awscrt import io, mqtt, http
 from awsiot import mqtt_connection_builder
-from utils.command_line_utils import CommandLineUtils
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..')) 
 
