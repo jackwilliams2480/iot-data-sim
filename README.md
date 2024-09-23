@@ -1,7 +1,17 @@
-# iot-data-sim
-Simple tool to simulate common iot sensor readings and publish them to AWS IoT Core, Azure IoT Hub, or various other cloud capabilities.
+# IoT Injector
+Personal tool to simulate and publish common iot sensor readings to various cloud endpoints for testing
+#### Current:
 
-## certs
+- AWS IoT Core
+- Generic MQTT Broker, such as vm running mosquitto
+  
+#### Future:
+
+- Azure EventHub/IoT Hub
+- Generic CoAP/HTTP server
+- Websockets
+
+## Certs
 For proper functionality, create and populate a `certs` folder inside the directory of the relevant capability. For example:
 #### MQTT with Mosquitto broker
 ```python
@@ -34,8 +44,7 @@ iot-data-sim/
 |-- main.py
 ```
 
-## config
-You will have to create a yaml file which can hold the configurations for which ever option you choose to use. The file should be formatted as such:
+## Config
 ```yaml
 # config.yaml
 
